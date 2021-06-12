@@ -1,0 +1,12 @@
+@import './variables.scss';
+
+@mixin btn_styling{
+    min-width:221px;
+    min-height: 59px;
+    height: auto;
+    background:$bg-color;
+    color: $text-color;
+    box-shadow: 0px 5px 5px #A7AA08;
+    border-radius: 10px;
+    border:none;
+}

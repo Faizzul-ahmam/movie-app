@@ -1,74 +1,46 @@
-## Fave Technical Assignment
+# Getting Started with Create React App
 
-### Introduction
-This assignment helps us better understand your ability to solve problems and fulfil task requirements with technical solutions. We would like to get an impression of how you write code in the real world. We will be evaluating your communication skills, development capabilities, and your interpretation of what good, clean, production-ready code should look like.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-### Scenario
-Cinema operators such as Cathay are one of the most popular merchants we have in Fave. We want to build an app to help our users discover movies easily.
+## Available Scripts
 
-### Requirements
-Create a standalone movie app / mobile web(responsive UI) with the following screens:
+In the project directory, you can run:
 
-### **Home screen with list of available movies**
+### `npm start`
 
-- Ordered by release date (default), alphabetical, rating - can use dropdown 
-- Pull to refresh
-- Load when scrolled to bottom
-- Each movie to include:
-  - Poster/Backdrop image
-  - Title
-  - Popularity
-    
-### **Detail screen**
-Movie details should have the following:
-- Synopsis
-- Genres
-- Language
-- Duration
-- Book the movie (simulate opening of this [link](https://www.cathaycineplexes.com.sg/) in a web view)
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-### **Frontend Design**
-It is up to you to design the UI. Simple is good.
+The page will reload if you make edits.\
+You will also see any lint errors in the console.
 
-### **Backend**
-Use the API from [TMDb](https://developers.themoviedb.org/3/getting-started/introduction) as your data source.
+### `npm test`
 
-You can use our API Key: `328c283cd27bd1877d9080ccb1604c91`
-  
-**Sample requests:**
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-Listing
+### `npm run build`
 
-```
-http://api.themoviedb.org/3/discover/movie?api_key=328c283cd27bd1877d9080ccb1604c91&primary_release_date.lte=2016-12-31&sort_by=release_date.desc&page=1
-```
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-Detail
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-```
-http://api.themoviedb.org/3/movie/328111?api_key=328c283cd27bd1877d9080ccb1604c91
-```
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Technical requirements:
+### `npm run eject`
 
-| iOS | Android | Web |
-| ----------- | ----------- | ----------- |
-| Minimum Swift 4.0 | Kotlin or Java | React based framework (ReactJS, create-react-app, etc) |
-| Usage of RxSwift + MVVM | RxJava or RxKotlin or Coroutine | CSS or SASS |
-| Dependency Injection | MVVM or VIPER | Use context API & hooks (for React) |
-| | Dependency Injection - Dagger or Koin or Hilt | Use correct routes, param & URL (navigation required) |
-| | Data Binding | Knowledge & experience using typescript is a must |
+**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-We expect unit tests for the main functionalities only.
-You can use third party libraries.
+If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-### Code Repo
-Please use this repo for your commits.
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-## Evaluation Criteria
-- Clean, readable, maintainable, and performant code
-- Clear documentation that describe your assumptions and design considerations, you can use the wiki in this repo. Don't know how to create wiki? [Create one](https://docs.github.com/en/github/building-a-strong-community/adding-or-editing-wiki-pages)
-- Unit Tests will be evaluated
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-That’s the end of the assignment, we hope you have fun!
-looking forward to your submission.
+## Learn More
+
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+To learn React, check out the [React documentation](https://reactjs.org/).
