@@ -1,30 +1,49 @@
 
-import { useEffect, useState } from 'react';
-import { Response ,getMovieList} from '../API/Movie';
+import { useEffect, useState } from 'react'
+import { Movies_API } from '../API/movie'
 import {MovieCard} from './MovieCard'
+import {Movies_On_Theater} from '../model/movies.interface'
 
-// type ListofMovie = {
-//     poster_src?:String,
-//     title?:String,
-//     Popularity?:String
-// }
 
 export const MovieList = () =>
 {
-    const [MovieDetail,setMovieDetail] = useState<Response['results'][]>([]);
+    const [Movies,setMovies] = useState<Movies_On_Theater>();
     // console.clear()
-    console.log('MovieDetail : ',MovieDetail?MovieDetail:"Empty")
+    console.log('MovieDetail : ',Movies?Movies:"Empty")
+    
     useEffect(()=>{
-        console.log("Hey")
-        const data = getMovieList()
-        console.log(data)
+        Movies_API.getListOnTheater()
+        .then((data) =>{
+            setMovies(data)
+        })
+        return () =>{}
     },[]);
 
     return(
-    <div>
-        Movie
-        
-        <MovieCard/>
-    </div>);
+    <>
+        <div>
+            Movies on theater
+            {
+                Movies? 
+                (
+                    Movies.results.map(movie =>(
+                                    <div key={movie.id}>
+                                        <MovieCard 
+                                            poster_src={movie.poster_path}
+                                            title={movie.title}
+                                        />
+                                    </div>
+                                    ))
+                )
+                :
+                ( 
+                    <div>No Movie</div>
+                )
+                
+            }
+            
+        </div>
+    </>
+        )
 
 }

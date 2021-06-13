@@ -1,3 +1,4 @@
+import { env } from "process";
 
 type Details = {
     poster:string
@@ -20,5 +21,4 @@ export const Movie = ({poster,title,duration,synopsis,genres,lang}:Details) =>
     <div className="cta">
         <button>Book Now</button>
     </div>
-    
 </div>;

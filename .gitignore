@@ -12,6 +12,7 @@
 /build
 
 # misc
+.env
 .README.old.md
 .DS_Store
 .env.local
