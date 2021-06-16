@@ -1,5 +1,6 @@
 import axios, { AxiosResponse } from 'axios';
-import { Movies_On_Theater } from '../model/movies.interface';
+import { mapResult } from '../helper/util';
+import { Movies , ReqsParam } from "../model/movies.interface";
 
 const BASE_URL = process.env.REACT_APP_MOVIE_LIST_URL
 const API_KEY = process.env.REACT_APP_API_KEY
@@ -8,35 +9,20 @@ const API_KEY = process.env.REACT_APP_API_KEY
 const instance = axios.create({
 	baseURL: BASE_URL,
     params: {
-        api_key: API_KEY
-      },
+		api_key: API_KEY
+	},
 	timeout: 15000,
 });
 
-const responseBody = (response: AxiosResponse) => response.data;
+const responseBody = (response: AxiosResponse) => mapResult(response.data.results)
 
 const requests = {
-	get: (url: string) => instance.get(url).then(responseBody)
+	get: (url: string,parameters?:ReqsParam) => instance.get(url,{params:parameters}).then(responseBody)
+	.catch((_) => {
+		return [];
+	  })
 };
 
 export const Movies_API = {
-	getListOnTheater: (): Promise<Movies_On_Theater> => requests.get('/now_playing'),
+	getListOnTheater: (parameters?:ReqsParam): Promise<Movies[]> => requests.get('',parameters),
 };
-
-// export const getMovieList = ():Promise<Movies[]> => {
-//     return fetch('http://api.themoviedb.org/3/discover/movie?api_key=328c283cd27bd1877d9080ccb1604c91&primary_release_date.lte=2016-12-31&sort_by=release_date.desc&page=1')
-//     .then(res => res.json())
-//         .then(res => {
-//             console.log(res)
-//             return res as Movies[]
-//         })
-// }
-
-// export const getMovieList = ():Promise<Response.> => {
-//     return fetch(BASE_URL+'now_playing?api_key='+API_KEY)
-//     .then(res => res.json())
-//         .then(res => {
-//             // console.log(res)
-//             return res as Response
-//         })
-// }

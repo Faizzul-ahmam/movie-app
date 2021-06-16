@@ -1,46 +1,39 @@
 
-import { useEffect, useState } from 'react'
-import { Movies_API } from '../API/movie'
+import { useContext } from 'react'
 import {MovieCard} from './MovieCard'
-import {Movies_On_Theater} from '../model/movies.interface'
+import { MoviesContext } from '../context/movie.context'
+import { Filter } from './Filter'
 
 
 export const MovieList = () =>
-{
-    const [Movies,setMovies] = useState<Movies_On_Theater>();
-    // console.clear()
-    console.log('MovieDetail : ',Movies?Movies:"Empty")
+{   
+    const {MovieList} = useContext(MoviesContext)
+
+    console.log('Movies : ',MovieList?MovieList:"Empty")
     
-    useEffect(()=>{
-        Movies_API.getListOnTheater()
-        .then((data) =>{
-            setMovies(data)
-        })
-        return () =>{}
-    },[]);
+
 
     return(
     <>
-        <div>
-            Movies on theater
-            {
-                Movies? 
-                (
-                    Movies.results.map(movie =>(
-                                    <div key={movie.id}>
-                                        <MovieCard 
-                                            poster_src={movie.poster_path}
-                                            title={movie.title}
-                                        />
-                                    </div>
-                                    ))
-                )
-                :
-                ( 
-                    <div>No Movie</div>
-                )
+        <div style={{paddingTop:40, paddingBottom:20}}>
+            <h2 style={{textAlign:'left'}}>Movies on theater</h2>
+            <Filter/>
+        </div>
+        <div className="flex"  >
+            {MovieList?MovieList.map((movie) =>(
+                                // <div className="flex-wrap" key={movie.id}>
+                                    <MovieCard key={movie.id}
+                                        poster_src={movie.poster}
+                                        title={movie.title}
+                                        rating={movie.rating}
+                                    />
+                                // </div>
+                                ))
                 
-            }
+                                :
+                
+                <div className="flex"><h2>Loading ...</h2> </div>
+             }
             
         </div>
     </>

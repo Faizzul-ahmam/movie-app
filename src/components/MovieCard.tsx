@@ -1,18 +1,26 @@
+import '../style/MovieCard.scss'
+import {imageList} from '../img'
 
 type MovieDetail = {
-    poster_src?:String,
-    title?:String,
-    popularity?:String
+    poster_src?:string,
+    title:string,
+    rating:number,
+    popularity?:string
 }
 
-export const MovieCard = ({poster_src,title,popularity}:MovieDetail) =>
+export const MovieCard = ({poster_src,title,rating,popularity}:MovieDetail) =>
 {
-    const IMG_BASE_URL = process.env.REACT_APP_MOVIE_IMAGE_BASE_URL
+    
 
     return(
-    <div>
-        <img src={IMG_BASE_URL+'w200/'+poster_src}></img>
-        <h3>{title}</h3>
-    </div>);
+        <div className="movie-card">
+            <div className="movie-rating"><img src={imageList.star} alt=""/><h5>{rating.toFixed(1)}</h5></div>
+            <div className="movie-img">
+                <img src={poster_src || imageList.movie_tmb}/>
+                <div></div>
+            </div>
+            <div className="movie-title"><h4>{title}</h4></div>
+        </div>
+        );
 
 }

@@ -1,0 +1,20 @@
+@import './variables.scss';
+
+.Nav{
+
+    &-container{
+        display: flex;
+        height: 60px;
+        justify-content: space-between;
+
+        a{
+            font-size: 18px;
+            color:$accent-color;
+        }
+    }
+    &-logo,&-items{
+        display: flex;
+        align-items: center;
+    }
+
+}   

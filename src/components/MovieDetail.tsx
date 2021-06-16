@@ -1,5 +1,3 @@
-import { env } from "process";
-
 type Details = {
     poster:string
     title:String,

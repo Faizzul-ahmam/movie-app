@@ -1,8 +1,87 @@
 @import './variables.scss';
 
+
 body{
     margin: 0;
     background-color: $bg-color;
     font-family: $Poppins;
 }
 
+
+
+h2{
+    color:white;
+    font-weight: 500;
+}
+
+h3{
+    font-size:14px;
+    font-weight: 400;
+    color:$accent-color
+}
+
+h4{
+    font-size:14px;
+    font-weight: 400;
+    color:white
+}
+
+h5{
+    margin: 8px 0;
+    color:white
+}
+
+p{
+    color:white;
+    font-size: 18px;
+}
+
+select{
+    background-color: transparent;
+    font-size: 14px;
+    font-family: $Poppins;
+    font-weight: 600;
+    color:$accent-color;
+    border-radius: 5px;
+    height: 37px;
+    padding:0 10px;
+    border-color: $accent-color;
+    transition: 0.3s;
+    &:focus{
+        outline: none;
+    }
+    &:hover{
+        color:$bg-color;
+        background-color: $accent-color;
+    }
+}
+
+option{
+    background-color: $bg-color;
+    color: $accent-color;
+    &:hover{
+        background-color:$accent-color
+        
+    }
+}
+
+#root{
+    padding:0 40px;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    &-wrap{
+        flex: 1 0 25%;
+        padding:20px 5px
+    }
+}
+
+.filter{
+    float: right;
+    display: inline-flex;
+    justify-items: end;
+    align-items: center;
+}
