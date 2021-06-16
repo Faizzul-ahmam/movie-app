@@ -3,6 +3,6 @@ import star from "./star.png"
 
 export const imageList = {
     movie_tmb: movie_thumb,
-    star:star
+    star:star,
 }
 

@@ -18,7 +18,6 @@ export const Filter = () =>
         event.preventDefault()
         let selectedSortBy = event.target.value
         setSortBy(selectedSortBy)
-        console.log(selectedSortBy)
         updateParam(selectedSortBy)
     }
 

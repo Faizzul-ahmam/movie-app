@@ -1,7 +1,7 @@
-import { Movies } from "../model/movies.interface";
+import { I_Movies } from "../model/movies.interface";
 const IMG_BASE_URL = process.env.REACT_APP_MOVIE_IMAGE_BASE_URL;
 
-export function mapResult(res: any[]): Movies[] {
+export function mapResult(res: any[]): I_Movies[] {
     return res.map((movie) => {
       const {
         id,
