@@ -7,7 +7,12 @@ body{
     font-family: $Poppins;
 }
 
-
+h1{
+    font-size: 34px;
+    font-weight: 500;
+    line-height: 40px;
+    color:white;
+}
 h2{
     color:white;
     font-weight: 500;
@@ -27,16 +32,35 @@ h4{
 
 h5{
     margin: 8px 0;
+    font-size: 600;
     color:white
 }
 
 p{
     font-weight: 400;
-    line-height: 27px;
+    line-height: 23px;
     color:white;
-    font-size: 16px;
+    font-size: 12px;
 }
 
+button{
+    background-color: $accent-color;
+    color:$bg-color;
+    box-shadow: 0px 5px 10px #54550f;
+    height: 50px;
+    width: 200px;
+    border-radius: 10px;
+    font-size: 18px;
+    font-family: $Poppins;
+    font-weight: 600;
+    letter-spacing: -.5px;
+    border: none;
+    transition: 0.3s;
+    &:hover{
+        cursor: pointer;
+        background-color:#bfc21b ;
+    }
+}
 select{
     background-color: transparent;
     font-size: 14px;
@@ -86,3 +110,9 @@ option{
     justify-items: end;
     align-items: center;
 }
+
+// @media screen and (max-width: 426px){
+//     .movie > .poster{
+//         width: 90%;
+//     }
+// }

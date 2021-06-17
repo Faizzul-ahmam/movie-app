@@ -9,8 +9,6 @@ export const MovieList = () =>
 {   
     const {MovieList} = useContext(MoviesContext)
 
-    console.log('Movies : ',MovieList?MovieList:"Empty")
-    
     return(
     <>
         <div style={{paddingTop:40, paddingBottom:20}}>
@@ -19,16 +17,13 @@ export const MovieList = () =>
         </div>
         <div className="flex">
             {MovieList?MovieList.map((movie) =>(
-                                // <div className="flex-wrap" key={movie.id}>
-                                    <MovieCard key={movie.id}
+                                    <MovieCard
                                         id={movie.id}
                                         poster={movie.poster}
                                         title={movie.title}
                                         rating={movie.rating}
                                     />
-                                // </div>
                                 ))
-                
                                 :
                 
                 <div className="flex"><h2>Loading ...</h2> </div>

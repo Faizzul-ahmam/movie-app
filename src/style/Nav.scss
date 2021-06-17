@@ -8,13 +8,23 @@
         justify-content: space-between;
 
         a{
+            text-decoration: none;
             font-size: 18px;
             color:$accent-color;
+            
+            img{
+                height: 10px;
+            }
         }
+
     }
     &-logo,&-items{
         display: flex;
         align-items: center;
+
+        &:hover{
+            cursor: pointer;
+        }
     }
 
 }   

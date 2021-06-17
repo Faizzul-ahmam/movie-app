@@ -23,23 +23,32 @@ export const MovieDetail = ({backdrop_path,title,runtime,overview,genres,origina
 
         settimeInString( Hours+' Hour '+minutes+' minutes')
     }
+    const toClosePanel =(event:any) =>
+    {
+        event.preventDefault();
+        if(event.target === event.currentTarget){
+            closePanel()
+        }
+    }
 
-    return (<div className="movie" >
-        <div onClick={closePanel}>Close</div>
+    const openButtonLink = ()=>{
+        window.open('https://www.cathaycineplexes.com.sg/', "_blank"); 
+    }
+    return (<div className="movie" onClick={toClosePanel}>
         <div className="poster">
             <div className="detail">
                 <div>
-                    <img src={`${IMG_BASE_URL}w500/${backdrop_path}`}/>
+                    <img src={`${IMG_BASE_URL}original/${backdrop_path}`}/>
                 </div>
                 <div className="info">
-                    <h3>{title}</h3>
-                    <h5>{timeInString}</h5>{original_language}
+                    <h1>{title}</h1>
+                    <div className='i-1'><h5>{timeInString}</h5>&nbsp;&nbsp;&nbsp;<div className="lang">{original_language}</div></div>
                     <p>{overview}</p>
-                    <div>
-                        {genres.map(genre =><div key={genre.id}> {genre.name} </div>)}
+                    <div className="genres">
+                        {genres.map(genre =><div className="genre" key={genre.id}>{genre.name}</div>)}
                     </div>
                     <div className="cta">
-                        <button>Book Now</button>
+                        <button onClick={openButtonLink}>Book Now</button>
                     </div>
                 </div>
                 

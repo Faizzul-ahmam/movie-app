@@ -11,10 +11,9 @@ export const MovieCard = ({id,poster,title,rating}:I_Movies) =>
     const {openPanel,updateMoviePanel} = useContext(MoviesContext)
 
     const fetchData = (id:number) =>{
-        console.log("fetch Data: ",id)
+        
         Movies_API.getMovieDetail(id)
         .then((data) =>{
-            console.log(data)
             updateMoviePanel(data)
           })
         .then(()=>openPanel())        
@@ -26,7 +25,7 @@ export const MovieCard = ({id,poster,title,rating}:I_Movies) =>
                 <h5>{rating.toFixed(1)}</h5>
             </div>
             <div className="movie-img" onClick={() => {fetchData(id)}}>
-                <img src={poster || imageList.movie_tmb} />
+                <img src={poster || imageList.movie_tmb} alt="" />
             </div>
             <div className="movie-title"><h4>{title}</h4></div>
         </div>

@@ -8,7 +8,7 @@ import { Movies_API } from './API/movie';
 const defaultParam = {
   page:1,
   "primary_release_date.gte":"2021-01-20",
-  "primary_release_date.lte":"2021-07-14",
+  "primary_release_date.lte":"2021-08-14",
   sort_by:"primary_release_date.desc",
   "vote_count.gte":10
 }
@@ -37,8 +37,6 @@ function App() {
     }
   }
 
-
-  
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
@@ -46,16 +44,12 @@ function App() {
 
   useEffect(() => {
     if (isBottom) {
-      console.log("Kat Bawah")
       let newPage = currentPage + 1
       setPage(newPage)
-      console.log(currentPage)
     }
   }, [isBottom]);
 
-
   useEffect(()=>{
-    console.log("Trigger by page")
     Movies_API.getListOnTheater(Params)
     .then((data) =>{
       
@@ -77,14 +71,17 @@ function App() {
   }
 
   const changeSortBy = (sort:string) =>{
-    setParams({...Params,sort_by:sort})
+    setcurrentPage(1)
+    setParams({...Params,page:1,sort_by:sort})
   }
 
   const closeMoviePage = () =>{
+    document.body.style.overflow = 'visible'
     setMovieToggle(false)
   }
 
   const openMoviePage = ()=>{
+    document.body.style.overflow = 'hidden'
     setMovieToggle(true)
   }
 
