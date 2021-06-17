@@ -7,7 +7,7 @@ export const Nav = () =>
         <a href="#"><img src={imageList.logo} alt="logo"/></a>
     </div>
     <div className="Nav-items">
-        <a href="#">Hi There!</a>
+        <a href="#">Hi Faizzul !</a>
     </div>
 </div>;
 

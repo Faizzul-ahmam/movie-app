@@ -1,5 +1,3 @@
-## Fave Technical Assignment
-
 ### Introduction
 This assignment helps us better understand your ability to solve problems and fulfil task requirements with technical solutions. We would like to get an impression of how you write code in the real world. We will be evaluating your communication skills, development capabilities, and your interpretation of what good, clean, production-ready code should look like.
 

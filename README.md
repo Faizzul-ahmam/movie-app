@@ -1,6 +1,41 @@
-# Getting Started with Create React App
+# Movie Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+
+This is a front-end for the movie browsing application. The objective is provide an interface to help our users discover movies on theather easily and provide options for them to book their prefered movie.
+
+
+## Design Descriptions
+
+Minimal and clean design to provide better user experience (less disturbance).
+Using dark color to symbolize the experience in movie theather.
+San-serif font to express the modern element.
+The use of rounded element to emit sense of friendly and easygoing.
+
+## General Architecture
+
+Calling API --> Save data to state variable using setStateAction() --> Pass and use saved data and functions using Context API to the components.
+
+## Feature Available
+
+- Sort movies by release date, ratings and alphabetically.
+- Infinite loads to feed user more movies when on scrolling.
+- Show list of movie avaiable on theather.
+- Show more info of specific movie.
+- Mobile responsive design.
+
+## Technical Description
+
+-Typescript base React App.
+- The use of Axios module to fetch the API.
+- Passing data using Context API.
+- The use of setState() to declare state variable and it's setter.
+- The use of useEffect() to monitor dependencies update in order to trigger some functionalities.
+
+
+## How to start? 
+
+This is the avaiable script to be use for development purposed.
 
 ## Available Scripts
 
@@ -39,8 +74,3 @@ Instead, it will copy all the configuration files and the transitive dependencie
 
 You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
