@@ -3,7 +3,7 @@ import './style/App.scss';
 import Component from './components';
 import { MoviesContext } from './context/movie.context';
 import { I_Movies , I_ReqsParam, I_MovieDetails} from './model/movies.interface';
-import { Movies_API } from './API/movie';
+import { Movies_API } from './API/Movie';
 
 const defaultParam = {
   page:1,

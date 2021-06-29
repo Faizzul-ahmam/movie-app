@@ -3,7 +3,7 @@ import {imageList} from '../img'
 import { MoviesContext } from '../context/movie.context'
 import { useContext } from 'react'
 import { I_Movies } from '../model/movies.interface';
-import { Movies_API } from '../API/movie';
+import { Movies_API } from '../API/Movie';
 
 
 export const MovieCard = ({id,poster,title,rating}:I_Movies) =>

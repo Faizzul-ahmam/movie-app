@@ -40,6 +40,9 @@ This is the avaiable script to be use for development purposed.
 ## Available Scripts
 
 In the project directory, you can run:
+### `npm install`
+
+Firstly, need to install all the dependencies before able to run the app.
 
 ### `npm start`
 
