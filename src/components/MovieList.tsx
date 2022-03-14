@@ -8,7 +8,6 @@ import { Filter } from './Filter'
 export const MovieList = () =>
 {   
     const {MovieList} = useContext(MoviesContext)
-
     return(
     <>
         <div style={{paddingTop:40, paddingBottom:20}}>
@@ -16,8 +15,8 @@ export const MovieList = () =>
             <Filter/>
         </div>
         <div className="flex">
-            {MovieList?MovieList.map((movie) =>(
-                                    <MovieCard
+            {MovieList?MovieList.map((movie,i) =>( 
+                                    <MovieCard key={i}
                                         id={movie.id}
                                         poster={movie.poster}
                                         title={movie.title}

@@ -10,7 +10,7 @@ export function mapResult(res: any[]): I_Movies[] {
         vote_average,
         poster_path
       } = movie;
-  
+      
       return {
         id,
         title,

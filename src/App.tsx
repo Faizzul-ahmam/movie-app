@@ -44,6 +44,7 @@ function App() {
 
   useEffect(() => {
     if (isBottom) {
+      //Call setPage to trigger API call to load next page.
       let newPage = currentPage + 1
       setPage(newPage)
     }
@@ -87,32 +88,31 @@ function App() {
 
   return (
    
-              <MoviesContext.Provider 
-                value={{MovieList, 
-                updateMovies:setMovieList, 
-                reqParam:Params, 
-                updateParam:changeSortBy,
-                movieDetails:MovieDetail,
-                updateMoviePanel:setMovieDetail,
-                closePanel:closeMoviePage,
-                openPanel:openMoviePage
-                }}>
+        <MoviesContext.Provider 
+          value={{MovieList, 
+            updateMovies:setMovieList, 
+            reqParam:Params, 
+            updateParam:changeSortBy,
+            movieDetails:MovieDetail,
+            updateMoviePanel:setMovieDetail,
+            closePanel:closeMoviePage,
+            openPanel:openMoviePage
+          }}>
             
-              {MovieToggle && MovieDetail?<Component.MovieDetail
-                backdrop_path={MovieDetail.backdrop_path}
-                title={MovieDetail.title}
-                runtime={MovieDetail?.runtime}
-                overview={MovieDetail?.overview}
-                genres = {MovieDetail?.genres}
-                original_language={MovieDetail?.original_language}
-              />:<div></div>}
+            {MovieToggle && MovieDetail?<Component.MovieDetail
+              backdrop_path={MovieDetail.backdrop_path}
+              title={MovieDetail.title}
+              runtime={MovieDetail?.runtime}
+              overview={MovieDetail?.overview}
+              genres = {MovieDetail?.genres}
+              original_language={MovieDetail?.original_language}
+            />:<div></div>}
             
             <div className="main-container">
               <Component.Nav/>
               <Component.MovieList/>
             </div>
         </MoviesContext.Provider>
-
  
   );
 }

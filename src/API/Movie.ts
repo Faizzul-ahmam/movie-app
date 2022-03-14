@@ -17,7 +17,8 @@ const instance_discover = axios.create({
 const responseBody = (response: AxiosResponse) => mapResult(response.data.results)
 
 const requests = {
-	get: (url: string,parameters?:I_ReqsParam) => instance_discover.get(url,{params:parameters}).then(responseBody)
+	get: (url: string,parameters?:I_ReqsParam) => instance_discover.get(url,{params:parameters})
+	.then(responseBody)
 	.catch((_) => {
 		return [];
 	  })
@@ -25,11 +26,12 @@ const requests = {
 
 export const Movies_API = {
 	getListOnTheater: (parameters?:I_ReqsParam): Promise<I_Movies[]> => requests.get('discover/movie',parameters),
+	
 	getMovieDetail: (id:number): Promise<I_MovieDetails> => 
-	instance_discover.get('movie/'+id)
-	.then((response:AxiosResponse) => response.data)
-	.catch((_) => {
-		return {};
-	  })
+		instance_discover.get('movie/'+id)
+		.then((response:AxiosResponse) => response.data)
+		.catch((_) => {
+			return {};
+		})
 
 };

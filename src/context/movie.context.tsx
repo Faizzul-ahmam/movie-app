@@ -13,16 +13,5 @@ export const MoviesContext = React.createContext<{
 }>({
     MovieList: [],
     updateMovies: Function,
-    // reqParam:{},
-    // updateParam:null,
-    // movieDetails:{
-    //   poster:'',
-    //   title:'',
-    //   screenplay:0,
-    //   synopsis:'',
-    //   genres:[],
-    //   lang:'',
-    // },
-    // changeMovieDetail:Function
   });
 
