@@ -7,10 +7,20 @@ import { Movies_API } from './API/Movie';
 
 const defaultParam = {
   page:1,
-  "primary_release_date.gte":"2021-01-20",
-  "primary_release_date.lte":"2021-08-14",
+  // "primary_release_date.lte":getReleaseDate('lte'),
+  // "primary_release_date.gte":getReleaseDate('gte'),
+  "primary_release_date.lte":getReleaseDate(),
+  "primary_release_date.gte":getReleaseDate(true),
   sort_by:"primary_release_date.desc",
   "vote_count.gte":10
+}
+
+function getReleaseDate(lte=false)
+{
+  let today = new Date();
+  let dateOffset = new Date(today.setDate( lte?today.getDate() - 200 : today.getDate() + 200))
+  let date = dateOffset.getFullYear() +'-'+ ('0'+(dateOffset.getMonth() + 1)).slice(-2) +'-'+ ('0'+ dateOffset.getDate()).slice(-2);
+  return date.toString()
 }
 
 
