@@ -50,15 +50,14 @@ function App() {
   useEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+  });
 
   useEffect(() => {
     if (isBottom) {
       //Call setPage to trigger API call to load next page.
-      let newPage = currentPage + 1
-      setPage(newPage)
+      setPage(currentPage + 1)
     }
-  }, [isBottom]);
+  }, [isBottom,currentPage]);
 
   useEffect(()=>{
     Movies_API.getListOnTheater(Params)
